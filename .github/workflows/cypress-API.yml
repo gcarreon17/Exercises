@@ -1,4 +1,4 @@
-name: Cypress API Tests
+name: Cypress API Automation Exercise Test
 
 on:
   push:
@@ -24,5 +24,5 @@ jobs:
         run: npm ci
 
       - name: Run Cypress API tests
-        run: npx cypress run --spec "cypress\e2e\API"
+        run: npx cypress run --spec "cypress/e2e/api-testing/automationExerciseAPI.cy.js"
 
