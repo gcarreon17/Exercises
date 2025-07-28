@@ -1,0 +1,76 @@
+##Summary:
+
+## This workflow will run on schedule, push, PR, and manual dispatch.
+## All tests under the e2e folder will run if you use the provided Cypress CLI command.
+## Reports and screenshots will be archived.
+##Your original logic and artifact steps are preserved.
+
+name: Scheduled Workflow - Cypress Tests
+
+on:
+  schedule:
+    - cron: '0 16 * * 3'  # Every Wednesday 16:00 UTC -> Thursday 00:00 PHT
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+  workflow_dispatch: # Manual Trigger on GitHub
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '20'
+
+      # Step 3: Cache npm dependencies
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Run Cypress E2E tests (change command here if needed)
+      - name: Run Cypress E2E Test
+        # If your npm script covers all e2e tests, leave as is.
+        ##run: npm run cy:run:all
+        run: cypress-io/github-action@v6
+        # To run all tests under e2e folder, replace the line above with below:
+        # run: npx cypress run --spec "e2e/**/*.cy.{js,ts}"
+        # env:
+        #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 6: Archive Results Report
+      - name: Cypress Regression E2E Test Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-test-report
+          path: cypress/reports/html/index.html
+
+      # Step 7: Archive Screenshot 
+      - name: Cypress Screenshot - Test Evidences
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress_screenshot
+          path: cypress/screenshots/
+
+      # Step 8: Upload report to GitHub Pages artifact
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: cypress/reports/html/ # Ensure the directory is uploaded, not just the file
