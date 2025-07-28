@@ -24,4 +24,5 @@ jobs:
         run: npm ci
 
       - name: Run Cypress API tests
-        uses: cypress-io/github-action@v6
+        run: npx cypress run --spec "cypress/e2e/API/**/*.cy.js"
+
