@@ -107,7 +107,7 @@ describe("Logout User", {testIsolation: true}, () => {
 
       //Verify Successful registration message
       cy.contains("Account Created!").should("have.text", "Account Created!");
-      cy.captureSnapshot("Automation Exercise/Verified successful registration");
+      cy.captureSnapshot("Automation Exercise UI/Verified successful registration");
 
       //Click Continue button
       cy.get('[data-qa="continue-button"]').click();

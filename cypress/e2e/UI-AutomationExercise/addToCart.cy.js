@@ -31,7 +31,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
       .should("be.visible")
       .invoke("text")
       .should("eq", "All Products");
-     cy.captureSnapshot("Automation Exercise/Product Listing");
+     cy.captureSnapshot("Automation Exercise UI/Product Listing");
   });
 
   it("Verify product names and images display", () => {
@@ -84,7 +84,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
         cy.get('.product-information').should('be.visible');
         cy.contains('Add to cart').click();
         cy.get('#cartModal').should('be.visible').contains('Continue Shopping').click();
-        cy.captureSnapshot("Automation Exercise/Successful adding to cart");
+        cy.captureSnapshot("Automation Exercise UI/Successful adding to cart");
       });
   });
 
@@ -107,6 +107,6 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
       .type("Testing");
     cy.get('#button-review').should('be.visible').click();
     cy.get('span').invoke('text').should('include', 'Thank you for your review.');
-    cy.captureSnapshot("Automation Exercise/Successful review");
+    cy.captureSnapshot("Automation Exercise UI/Successful review");
   });
 });

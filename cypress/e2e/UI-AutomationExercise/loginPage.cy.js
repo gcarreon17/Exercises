@@ -15,7 +15,7 @@ describe("Blank Mandatory Fields in Login Page", { testIsolation: false }, () =>
       expect($input[0].checkValidity()).to.be.false;
       cy.log($input[0].validationMessage);
       });
-    cy.captureSnapshot("Automation Exercise/Verified email and password fields in Login Page left blank displayed an error message");
+    cy.captureSnapshot("Automation Exercise UI/Verified email and password fields in Login Page left blank displayed an error message");
    });
 
 
@@ -25,7 +25,7 @@ describe("Blank Mandatory Fields in Login Page", { testIsolation: false }, () =>
     cy.get('[data-qa="login-email"]').then(($input) => {
       expect($input[0].checkValidity()).to.be.false;
       cy.log($input[0].validationMessage); 
-    cy.captureSnapshot("Automation Exercise/Verified email field in SignUp Page left blank displayed an error message");
+    cy.captureSnapshot("Automation Exercise UI/Verified email field in SignUp Page left blank displayed an error message");
    });
   });
 
@@ -35,7 +35,7 @@ describe("Blank Mandatory Fields in Login Page", { testIsolation: false }, () =>
     cy.get('[data-qa="login-password"]').then(($input) => {
       expect($input[0].checkValidity()).to.be.false;
       cy.log($input[0].validationMessage); 
-    cy.captureSnapshot("Automation Exercise/Verified password field in SignUp Page left blank displayed an error message");
+    cy.captureSnapshot("Automation Exercise UI/Verified password field in SignUp Page left blank displayed an error message");
    });
   });
 });

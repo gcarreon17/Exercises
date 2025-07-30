@@ -7,7 +7,7 @@ describe("Remove Products", { testIsolation: false }, () => {
     cy.visit("https://www.automationexercise.com/");
     cy.url().should("eq", "https://www.automationexercise.com/");
     cy.title().should("eq", "Automation Exercise");
-    cy.captureSnapshot("Automation Exercise/Redirection to Automation Exercise");
+    cy.captureSnapshot("Automation Exercise UI/Redirection to Automation Exercise");
   });
 
   it("Verify List of Products are visible", () => {

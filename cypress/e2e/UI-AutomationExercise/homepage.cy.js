@@ -59,7 +59,7 @@ describe("Homepage", {testIsolation: true}, () => {
       .should("be.visible")
       .invoke("text")
       .should("eq", "You have been successfully subscribed!");
-    cy.captureSnapshot("Automation Exercise/Verified successfully subscribed");
+    cy.captureSnapshot("Automation Exercise UI/Verified successfully subscribed");
 
     cy.get(".searchform > p")
       .should("be.visible")

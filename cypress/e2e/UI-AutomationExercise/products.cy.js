@@ -25,7 +25,7 @@ describe("Products Page", {testIsolation: true}, () => {
       .should("be.visible")
       .find("img")
       .should("have.length", 34);
-    cy.captureSnapshot("Automation Exercise/Verified correct number of products displayed");
+    cy.captureSnapshot("Automation Exercise UI/Verified correct number of products displayed");
 
     //Verify image1
     cy.get(

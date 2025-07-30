@@ -35,7 +35,7 @@
           "equal",
           "Please include an '@' in the email address. 'Invalid' is missing an '@'."
         );
-      cy.captureSnapshot("Automation Exercise/Verified invalid login with incorrect email address format");
+      cy.captureSnapshot("Automation Exercise UI/Verified invalid login with incorrect email address format");
 
       //Verify Login using invalid email
       cy.get('[data-qa="login-email"]')
@@ -50,7 +50,7 @@
       cy.get(".login-form > form > p")
         .invoke("text")
         .should("eq", "Your email or password is incorrect!");
-      cy.captureSnapshot("Automation Exercise/Verified invalid login with incorrect email");
+      cy.captureSnapshot("Automation Exercise UI/Verified invalid login with incorrect email");
 
       //Verify Login using invalid email and password
       cy.get('[data-qa="login-email"]')
@@ -65,6 +65,6 @@
       cy.wait(5000);
       cy.get(".login-form").should("be.visible");
       cy.log("Invalid Credentials");
-      cy.captureSnapshot("Automation Exercise/Verified invalid login with incorrect email and password");
+      cy.captureSnapshot("Automation Exercise UI/Verified invalid login with incorrect email and password");
     });
   });

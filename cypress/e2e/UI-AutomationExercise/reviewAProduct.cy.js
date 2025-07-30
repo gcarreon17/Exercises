@@ -55,6 +55,6 @@ describe("Review a Product", {testIsolation: true}, () => {
 
     cy.get("#button-review").should("be.visible").and("be.enabled").click();
     cy.get('span').invoke('text').should('include', 'Thank you for your review.');
-    cy.captureSnapshot("Automation Exercise/Verified review a product");
+    cy.captureSnapshot("Automation Exercise UI/Verified review a product");
   });
 });

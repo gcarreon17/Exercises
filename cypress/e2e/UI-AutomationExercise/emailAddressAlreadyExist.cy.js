@@ -30,7 +30,7 @@ describe("Register an existing email address", {testIsolation: true}, () => {
       cy.get(".signup-form > form > p")
         .should("be.visible")
         .and("contain.text", "Email Address already exist!");
-      cy.captureSnapshot("Automation Exercise/Unsuccessful Registration of an existing user");
+      cy.captureSnapshot("Automation Exercise UI/Unsuccessful Registration of an existing user");
     });
   });
 });

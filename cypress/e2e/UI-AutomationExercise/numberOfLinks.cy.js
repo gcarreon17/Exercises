@@ -22,6 +22,6 @@ describe("Extract All URLs from a Website", {testIsolation: true}, () => {
     // Verify total number of URLs are correct
     cy.get("a").should("have.length", 147);
     cy.log(`Total number of links found: ${linksArray.length}`);
-    cy.captureSnapshot("Automation Exercise/Extracted all URLs from the website");
+    cy.captureSnapshot("Automation Exercise UI/Extracted all URLs from the website");
   });
 });
