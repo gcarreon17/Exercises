@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 describe("User API - POST", () => {
   
-  //const baseUrl = 'https://petstore.swagger.io/'
+  const baseUrl = 'https://petstore.swagger.io/'
   it("POST - Verify successful creation of users and returns status code 200", () => {
     const usersList = [
       {
