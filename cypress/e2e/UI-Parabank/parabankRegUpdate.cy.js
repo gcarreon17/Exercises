@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-import parabankPage from '../../../support/pages/parabankPages.js';
-import { parabankTestData } from '../../../support/utils/parabankUtils.js';
+import parabankPage from '../../support/pages/parabankPages.js';
+import { parabankTestData } from '../../support/utils/parabankUtils';
 
 let testData;
 

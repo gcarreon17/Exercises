@@ -44,7 +44,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
   //           expect(src, `Image src should include expected path`).to.include(productsData.images[index]);
   //           expect($img[0].naturalWidth, `Image should not be broken for "${productsData.names[index]}"`).to.be.greaterThan(0);
   //         });
-  //       cy.captureSnapshot("Automation Exercise/Product Listing is displayed");
+  //       cy.captureSnapshot("Automation Exercise UI/Product Listing is displayed");
   //     });
   });
 
@@ -81,14 +81,14 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
   //       });
   //       cy.get('.product-information').should('be.visible');
   //       cy.contains('Add to cart').click();
-  //       cy.captureSnapshot('successful adding to cart');
+  //       cy.captureSnapshot('Automation Exercise UI/Successful adding to cart');
   //       cy.get('.modal-content').should('be.visible');
   //       cy.get('.modal-title').should('be.visible').and('have.text', 'Added!');
   //       cy.log(`Product added: ${Cypress.env('selectedProductName')}`);
   //       cy.get('.modal-body').should('contain.text', 'Your product has been added to cart.');
   //       cy.contains('View Cart').should('be.visible').and('have.attr', 'href').and('include', 'view_cart');
   //       cy.get('#cartModal').should('be.visible').contains('Continue Shopping').click();
-  //       cy.captureSnapshot("Automation Exercise/Successful adding to cart")
+  //       cy.captureSnapshot("Automation Exercise UI/Successful adding to cart")
   //     });
   });
 
@@ -113,7 +113,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
   //     .type("Testing");
   //   cy.get('#button-review').should('be.visible').click();
   //   cy.get('span').invoke('text').should('include', 'Thank you for your review.');
-  //   cy.captureSnapshot("Automation Exercise/Successful Product Review");
+  //   cy.captureSnapshot("Automation Exercise UI/Successful Product Review");
   });
 
 
@@ -149,7 +149,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     //     expect(actualPath).to.eq(expectedImage);
     //   });
 
-    // cy.captureSnapshot("Automation Exercise/Verified product in cart with correct qty, name, price, and image");
+    // cy.captureSnapshot("Automation Exercise UI/Verified product in cart with correct qty, name, price, and image");
   });
 
 
@@ -162,7 +162,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.get(".modal-body > :nth-child(2) > a > u").should('be.visible').invoke('text').should('eq', "Register / Login")
     // cy.get('.modal-body > :nth-child(2) > a > u').click();
     // cy.url().should('eq', "https://www.automationexercise.com/login");
-    // cy.captureSnapshot("Automation Exercise/Verified redirected to Signup/Login page");
+    // cy.captureSnapshot("Automation Exercise UI/Verified redirected to Signup/Login page");
   });
 
   // //Fixture user data and fill in the registration form
@@ -184,12 +184,12 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.get('[data-qa="signup-name"]').should("have.value", "");
     // cy.get('[data-qa="signup-email"]').should("have.value", "");
     // cy.get('[data-qa="signup-button"]').should('be.visible').and("be.enabled");
-    // cy.captureSnapshot("Automation Exercise/Sign Up Page is displayed");
+    // cy.captureSnapshot("Automation Exercise UI/Sign Up Page is displayed");
     // cy.get('[data-qa="signup-name"]').type(testData.signUpName);
     // cy.get('[data-qa="signup-email"]').type(testData.signUpEmailAddress);
-    // cy.captureSnapshot("Automation Exercise/Filled up Sign Up Page");
+    // cy.captureSnapshot("Automation Exercise UI/Filled up Sign Up Page");
     // cy.get('[data-qa="signup-button"]').click();
-    // cy.captureSnapshot("Automation Exercise/Verified successful  filled up SignUp Page");
+    // cy.captureSnapshot("Automation Exercise UI/Verified successful  filled up SignUp Page");
   });
 
 
@@ -290,7 +290,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.get('[data-qa="mobile_number"]').type(testData.mobileNumber);
     // //Create Account button
     // cy.get('[data-qa="create-account"]').should('have.text', "Create Account").and('be.enabled');
-    // cy.captureSnapshot("Verified Registration Page is displayed");
+    // cy.captureSnapshot("Automation Exercise UI/Verified Registration Page is displayed");
     // cy.get('[data-qa="create-account"]').click();
     // });
   });
@@ -304,7 +304,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.get('.col-sm-9 > :nth-child(2)').should('be.visible').and('have.text', "Congratulations! Your new account has been successfully created!");
     // cy.get('.col-sm-9 > :nth-child(3)').should('be.visible').and('have.text', "You can now take advantage of member privileges to enhance your online shopping experience with us.")
     // cy.get('[data-qa="continue-button"]').should('be.visible').and('not.have.class', 'disabled').click();
-    // cy.captureSnapshot("Automation Exercise/Verify successful registration of user account");
+    // cy.captureSnapshot("Automation Exercise UI/Verify successful registration of user account");
   });
 
   
@@ -312,7 +312,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
   it("Verify Login as Name is correct", () => {
     cy.LoginAsName(testData);
     // cy.get(":nth-child(10) > a").should('be.visible').and("contain", `Logged in as ${testData.signUpName}`);
-    // cy.captureSnapshot("Automation Exercise/Verified Login as Name is correct");
+    // cy.captureSnapshot("Automation Exercise UI/Verified Login as Name is correct");
   });
 
 
@@ -322,7 +322,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.url().should('eq', "https://www.automationexercise.com/view_cart");
     // cy.contains("Proceed To Checkout").should('be.visible').invoke('text').should('eq', "Proceed To Checkout");
     // cy.get(".col-sm-6 > .btn").should('be.visible').click();
-    // cy.captureSnapshot("Automation Exercise/Verified Checkout screen");
+    // cy.captureSnapshot("Automation Exercise UI/Verified Checkout screen");
   });
 
 
@@ -430,7 +430,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
 //     cy.get(":nth-child(2) > .control-label").should('be.visible').invoke("text").should('eq', "Expiration");
 //     cy.get('[data-qa="expiry-month"]').should('be.visible').and("have.value", '').and('have.attr', "placeholder", "MM").type(testData.shortMonth);
 //     cy.get('[data-qa="expiry-year"]').should('be.visible').and("have.value", '').and('have.attr', "placeholder", "YYYY").type(testData.creditYr);
-//     cy.captureSnapshot("Automation Exercise/Verified Payment screen");
+//     cy.captureSnapshot("Automation Exercise UI/Verified Payment screen");
 //     cy.contains("Pay and Confirm Order").should('be.visible').and("be.enabled").invoke("text").should('eq', "Pay and Confirm Order");
 //     cy.contains("Pay and Confirm Order").click();
 //     cy.get("body").then(($body) => {
@@ -442,7 +442,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
 //       } else {
 //         cy.log("Success message was not found in the DOM.");
 //       }
-//     cy.captureSnapshot("Automation Exercise/Verified successful payment");
+//     cy.captureSnapshot("Automation Exercise UI/Verified successful payment");
   });
 
 
@@ -452,7 +452,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.url().should('include', "https://www.automationexercise.com/payment_done/");
     // cy.get('[data-qa="order-placed"] > b').should('be.visible').invoke("text").should('eq', "Order Placed!");
     // cy.get(".col-sm-9 > p").should('be.visible').invoke("text").should('eq', "Congratulations! Your order has been confirmed!");
-    // cy.captureSnapshot("Automation Exercise/Verified successful checkout");
+    // cy.captureSnapshot("Automation Exercise UI/Verified successful checkout");
     });
   
 
@@ -468,6 +468,6 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
     // cy.get(".col-sm-9 > .btn-default").click();
     // cy.readFile("cypress/downloads/invoice.txt").should('exist').its('length').should('be.gt', 0);
     // cy.readFile("cypress/downloads/invoice.txt").should('eq', `Hi ${testData.firstName} ${testData.lastName}, Your total purchase amount is ${expectedTotal}. Thank you`);
-    // cy.captureSnapshot("Automation Exercise/Verified successful download of invoice");
+    // cy.captureSnapshot("Automation Exercise UI/Verified successful download of invoice");
    });
   });

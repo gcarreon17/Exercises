@@ -16,6 +16,7 @@ describe('GET - Pet Store Inventory', () => {
       statusKeys.forEach((key) => {
         expect(response.body[key]).to.be.a('number');
       });
+      cy.captureScreenshot("API/log all available statuses")
     });
   });
 
@@ -30,6 +31,7 @@ describe('GET - Pet Store Inventory', () => {
     }).then((response) => {
       expect(response.status).to.eq(404);
     });
+    cy.captureScreenshot("API/Verified GET - returns status code 404 for incorrect URL")
   });
 
 
@@ -44,6 +46,7 @@ describe('GET - Pet Store Inventory', () => {
     }).then((response) => {
       expect(response.status).to.eq(405);
     });
+    cy.captureScreenshot("API/Verified GET - returns status code 405 for incorrect method")
   });
 
 
@@ -61,6 +64,7 @@ describe('GET - Pet Store Inventory', () => {
       expect(response.status).to.eq(500);
       expect(response.body.message).to.eq('Internal Server Error');
     });
+    cy.captureScreenshot("API/Verified Get - status code 500 ")
   });
 });
 
@@ -90,6 +94,7 @@ describe('POST - Place Pet Order', () => {
       expect(response.status).to.eq(200);
       expect(response.body).to.include(orderPayload);
     });
+    cy.captureScreenshot("API/Verified POST - returns status code 200 for valid order")
   });
 
   it('POST - Verify returns status code 404 for incorrect URL', () => {
@@ -114,6 +119,7 @@ describe('POST - Place Pet Order', () => {
     }).then((response) => {
       expect(response.status).to.eq(404);
     });
+    cy.captureScreenshot("API/Verified POST - returns status code 404 for incorrect URL")
   });
 
   it('POST - Verify returns status code 405 for invalid method (GET)', () => {

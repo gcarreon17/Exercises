@@ -23,6 +23,6 @@ describe("Delete Call", () => {
       expect(response.status).to.eq(200);
       cy.log(JSON.stringify(response.body));
     });
-    cy.captureSnapshot("Jsonplaceholder API/Successful DELETE Call");
+    cy.captureSnapshot("API/Successful DELETE Call");
   });
 });

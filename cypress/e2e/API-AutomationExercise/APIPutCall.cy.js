@@ -53,6 +53,6 @@ describe("Put Call", () => {
       expect(response.status).to.eq(200);
       cy.log(JSON.stringify(response.body));
     });
-    cy.captureSnapshot('Successful PUT Call');
+    cy.captureSnapshot('API/Successful PUT Call');
   });
 });

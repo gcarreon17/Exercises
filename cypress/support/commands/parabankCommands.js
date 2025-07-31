@@ -52,13 +52,12 @@ Cypress.Commands.add("AssertParabankRegPage", () => {
 
 //Fill in fields in the Parabank registration form using commands.js file
 Cypress.Commands.add('fillParabankRegistrationForm', (testData) => {
-  testData = parabankRegTestData();
      cy.get("input[id='customer.firstName']").should('be.visible').and('be.empty').type(testData.firstName);
      cy.get("input[id='customer.lastName']").should('be.visible').and('be.empty').type(testData.lastName);
      cy.get("input[id='customer.address.street']").should('be.visible').and('be.empty').type(testData.address);
      cy.get("input[id='customer.address.city']").should('be.visible').and('be.empty').type(testData.city);
      cy.get("input[id='customer.address.state']").should('be.visible').and('be.empty').type(testData.state);
-     cy.get("input[id='customer.address.zipCode']").should('be.visible').and('be.empty').type(datestDatata.zipCode);
+     cy.get("input[id='customer.address.zipCode']").should('be.visible').and('be.empty').type(testData.zipCode);
      cy.get("input[id='customer.phoneNumber']").should('be.visible').and('be.empty').type(testData.phoneNumber);
      cy.get("input[id='customer.ssn']").should('be.visible').and('be.empty').type(testData.ssn);
      cy.get("input[id='customer.username']").should('be.visible').and('be.empty').type(testData.userName);

@@ -32,7 +32,7 @@ module.exports = defineConfig({
     video: true,
     videosFolder: 'cypress/videos',
     defaultCommandTimeout: 10000,
-    retries: 3, 
+    retries: 0, 
 
     videoCompression: false,      // 🗜 Compress the video (0–51, false = no compression)
     trashAssetsBeforeRuns: false, // 🗑 Delete old videos/screenshots before a new run
@@ -41,7 +41,7 @@ module.exports = defineConfig({
     reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
       charts: true,
-      reportPageTitle: "Automation Exercise Register Login Delete Report",
+      reportPageTitle: "Test Execution Report",
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: false,
@@ -60,7 +60,7 @@ module.exports = defineConfig({
       projectName: process.env.PROJECT_NAME || "Cypress Test Automation",
       environment: process.env.ENVIRONMENT || "QA",
       API_KEY: process.env.API_KEY,
-      API_BASE_URL: process.env.API_BASE_URL || "https://petstore.swagger.io/v2",
+      //API_BASE_URL: process.env.API_BASE_URL || "https://petstore.swagger.io/v2",
     },
   },
 )

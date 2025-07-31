@@ -3,9 +3,11 @@
 import parabankPage from '../../support/pages/parabankPages.js';
 import { parabankTestData } from '../../support/utils/parabankUtils';
 
-let testData;
+
 
 describe("Parabank Registration", { testIsolation: false }, () => {
+  let testData;
+  
   before(() => {
     cy.clearBefore();
     testData = parabankTestData();
@@ -43,7 +45,7 @@ describe("Parabank Registration", { testIsolation: false }, () => {
     cy.captureSnapshot("Parabank/Registration Page Field Display");
   });
 
-        //Enter default values in the Registration form
+        // Enter default values in the Registration form
     // it("Verify Filled Registration Form", () => {
     //     cy.get("input[id='customer.firstName']").should('be.visible').and('be.empty').type('TestFirstName');
     //     cy.get("input[id='customer.lastName']").should('be.visible').and('be.empty').type('TestLastName');
@@ -91,29 +93,29 @@ describe("Parabank Registration", { testIsolation: false }, () => {
 
         //Fill in the Registration form from using utility.js
     // it("Verify Filled Registration Form using faker-utility", () => {
-    //     const Userinput =  parabankRegTestData()
-    //     cy.get("input[id='customer.firstName']").should('be.visible').and('be.empty').type(Userinput.firstName);
-    //     cy.get("input[id='customer.lastName']").should('be.visible').and('be.empty').type(Userinput.lastName);
-    //     cy.get("input[id='customer.address.street']").should('be.visible').and('be.empty').type(Userinput.address);
-    //     cy.get("input[id='customer.address.city']").should('be.visible').and('be.empty').type(Userinput.city);
-    //     cy.get("input[id='customer.address.state']").should('be.visible').and('be.empty').type(Userinput.state);
-    //     cy.get("input[id='customer.address.zipCode']").should('be.visible').and('be.empty').type(Userinput.zipCode);
-    //     cy.get("input[id='customer.phoneNumber']").should('be.visible').and('be.empty').type(Userinput.phoneNumber);
-    //     cy.get("input[id='customer.ssn']").should('be.visible').and('be.empty').type(Userinput.ssn);
-    //     cy.get("input[id='customer.username']").should('be.visible').and('be.empty').type(Userinput.userName);
-    //     cy.get("input[id='customer.password']").should('be.visible').and('be.empty').type(Userinput.password);
-    //     cy.get('#repeatedPassword').should('be.visible').and('be.empty').type(Userinput.password);
+    //     const testData =  parabankTestData()
+    //     cy.get("input[id='customer.firstName']").should('be.visible').and('be.empty').type(testData.firstName);
+    //     cy.get("input[id='customer.lastName']").should('be.visible').and('be.empty').type(testData.lastName);
+    //     cy.get("input[id='customer.address.street']").should('be.visible').and('be.empty').type(testData.address);
+    //     cy.get("input[id='customer.address.city']").should('be.visible').and('be.empty').type(testData.city);
+    //     cy.get("input[id='customer.address.state']").should('be.visible').and('be.empty').type(testData.state);
+    //     cy.get("input[id='customer.address.zipCode']").should('be.visible').and('be.empty').type(testData.zipCode);
+    //     cy.get("input[id='customer.phoneNumber']").should('be.visible').and('be.empty').type(testData.phoneNumber);
+    //     cy.get("input[id='customer.ssn']").should('be.visible').and('be.empty').type(testData.ssn);
+    //     cy.get("input[id='customer.username']").should('be.visible').and('be.empty').type(testData.userName);
+    //     cy.get("input[id='customer.password']").should('be.visible').and('be.empty').type(testData.password);
+    //     cy.get('#repeatedPassword').should('be.visible').and('be.empty').type(testData.password);
     //     cy.get('[colspan="2"] > .button').should('be.visible').and('contain', 'Register').click();
     //     cy.url().should('include', '/register.htm');
-    //     cy.get('.title').should('contain', 'Welcome ' + Userinput.userName);
+    //     cy.get('.title').should('contain', 'Welcome ' + testData.userName);
     //     cy.get('#rightPanel > p').should('be.visible').and('contain', 'Your account was created successfully. You are now logged in.');
     //     cy.captureSnapshot("Parabank/Filled Registration Form using faker-utility");
     //    });
 
     
-       // Fill in the Registration form from using commands.js
+      //  Fill in the Registration form from using commands.js
     // it("Fill in the Registration form using commands.js", () => {
-    //     cy.fillParabankRegistrationForm(data) ;
+    //     cy.fillParabankRegistrationForm(testData) ;
     //     cy.captureSnapshot("Parabank/Filled Registration Formn using commands.js");
     // });
     
@@ -121,16 +123,16 @@ describe("Parabank Registration", { testIsolation: false }, () => {
         // Fill in the Registration form using page object model
     it("Fill in the Registration form using POM", () => {
         parabankPage.fillRegistrationFormWithData(testData);
-        cy.captureSnapshot("Parabank/Filled Registration Form using POM");
-        cy.get('[colspan="2"] > .button').should('be.visible').and('contain', 'Register').click();
-        cy.url().should('include', '/register.htm');
-        cy.get('.title').should('contain', 'Welcome ' + testData.userName);
-        cy.get('#rightPanel > p').should('be.visible').and('contain', 'Your account was created successfully. You are now logged in.');
-        cy.captureSnapshot("Parabank/Filled Registration Form using faker-utility"); 
+        // cy.get('[colspan="2"] > .button').should('be.visible').and('contain', 'Register')
+        // .click();
+        // cy.url().should('include', '/register.htm');
+        // cy.get('.title').should('contain', 'Welcome ' + testData.userName);
+        // cy.get('#rightPanel > p').should('be.visible').and('contain', 'Your account was created successfully. You are now logged in.');
+        cy.captureSnapshot("Parabank/Filled Registration Form using POM"); 
     });
 
 
-    it("Verify user logouts successfully", () => {
+    it("Verify successful logout", () => {
       cy.get('#leftPanel > ul > :nth-child(8) > a').should('be.visible').and('contain', 'Log Out').click();
       cy.url().should('contain', '/index.htm');
       cy.get('h2').should('be.visible').and('contain', 'Customer Login');

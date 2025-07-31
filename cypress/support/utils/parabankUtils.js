@@ -10,7 +10,7 @@ export function parabankTestData() {
   const zipCode = faker.location.zipCode();
   const phoneNumber = faker.phone.number();
   const ssn = faker.string.numeric(9);
-  const accountType = faker.helpers.arrayElement(['Checking', 'Savings']);
+  const accountType = faker.helpers.arrayElement(['CHECKING', 'SAVINGS']);
 
 
    return {

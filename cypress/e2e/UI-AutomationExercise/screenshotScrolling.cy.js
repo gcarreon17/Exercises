@@ -14,6 +14,6 @@ describe('Scroll and take screenshots', {testIsolation: true}, () => {
   
     it('Takes screenshots while scrolling the products page', () => {
       cy.visit('https://www.automationexercise.com/products');
-      cy.scrollAndScreenshot("Automation Exercise UI/Products Page";) 
+      cy.scrollAndScreenshot(productsData);
     });
   });

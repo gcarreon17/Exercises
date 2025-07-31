@@ -47,7 +47,7 @@ describe("Post Call", () => {
     }).then((response) => {
       expect(response.status).to.eq(201);
       cy.log(JSON.stringify(response.body));
-      cy.captureSnapshot('Successful POST Call');
+      cy.captureSnapshot('API/Successful POST Call');
     });
   });
 });

@@ -24,4 +24,8 @@ jobs:
         run: npm ci
 
       - name: Run Cypress UI tests
+<<<<<<< HEAD
         run: npx cypress run --spec "cypress/e2e/UI-AutomationExercise"
+=======
+        run: npx cypress run --spec "cypress/e2e/UI-AutomationExercise"
+>>>>>>> 6b6803934860e87914957cd0b36cc25029510a03

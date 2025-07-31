@@ -30,7 +30,7 @@ describe("Products and Brands List", () => {
       expect(response.status).to.eq(200);
       cy.log(JSON.stringify(response.body));
     });
-    cy.captureSnapshot("Automation Exercise API/Successful GET Product List");
+    cy.captureSnapshot("API/Successful GET Product List");
   });
 
 
@@ -46,6 +46,6 @@ describe("Products and Brands List", () => {
       expect(response.status).to.eq(200);
       cy.log(JSON.stringify(response.body));
     });
-     cy.captureSnapshot("Automation Exercise API/Successful GET Brands List");
+     cy.captureSnapshot("API/Successful GET Brands List");
   });
 });

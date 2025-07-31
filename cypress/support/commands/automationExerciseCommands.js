@@ -64,7 +64,7 @@ Cypress.Commands.add("LaunchWebsite", () => {
   cy.get("#subscribe").should("be.visible").and("be.enabled").click();
   cy.get(".alert-success.alert").should("be.visible").invoke('text').should("eq", "You have been successfully subscribed!");
   cy.get(".searchform > p").should("be.visible").invoke('text').should("eq", "Get the most recent updates from our site and be updated your self...");
-  cy.scrollAndScreenshot("Automation Exercise/Verified Homepage is displayed");
+  cy.scrollAndScreenshot("Automation Exercise UI/Verified Homepage is displayed");
 });
 
 
@@ -89,7 +89,7 @@ Cypress.Commands.add("LaunchSignUpPage", () => {
     cy.get('[data-qa="login-email"]').should('be.visible').and('have.attr', 'placeholder', "Email Address").and("have.value", "");
     cy.get('[data-qa="login-password"]').should('be.visible').and('have.attr', 'placeholder', "Password").and("have.value", "");
     cy.get('[data-qa="login-button"]').should('be.visible').invoke('text').should('eq', "Login");
-    cy.captureSnapshot("Automation Exercise/Verified Sign Up Page displayed");
+    cy.captureSnapshot("Automation Exercise UI/Verified Sign Up Page displayed");
 })
 
 
@@ -150,13 +150,13 @@ Cypress.Commands.add("ProductList", (productsData) => {
         });
         cy.get('.product-information').should('be.visible');
         cy.contains('Add to cart').click();
-        cy.captureSnapshot("Automation Exercise/Verified Successful adding to cart");
+        cy.captureSnapshot("Automation Exercise UI/Verified Successful adding to cart");
         cy.get('.modal-content').should('be.visible');
         cy.get('.modal-title').should('be.visible').and('have.text', 'Added!');
         cy.log(`Product added: ${Cypress.env('selectedProductName')}`);
         cy.get('.modal-body').should('contain.text', 'Your product has been added to cart.');
         cy.contains('View Cart').should('be.visible').and('have.attr', 'href').and('include', 'view_cart');
-        cy.captureSnapshot("Automation Exercise/Verified Continue shopping screen");
+        cy.captureSnapshot("Automation Exercise UI/Verified Continue shopping screen");
         cy.get('#cartModal').should('be.visible').contains('Continue Shopping').click();
       });
   });
@@ -181,7 +181,7 @@ Cypress.Commands.add('ReviewProduct', (testData) => {
       .type("Testing");
     cy.get('#button-review').should('be.visible').click();
     cy.get('span').invoke('text').should('include', 'Thank you for your review.');
-    cy.captureSnapshot('Automation Exercise/Verified Successful Product Review');
+    cy.captureSnapshot('Automation Exercise UI/Verified Successful Product Review');
   });
 
 
@@ -215,7 +215,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
         expect(actualPath).to.eq(expectedImage);
       });
 
-    cy.captureSnapshot("Automation Exercise/Verified product in cart with correct qty, name, price, and image");
+    cy.captureSnapshot("Automation Exercise UI/Verified product in cart with correct qty, name, price, and image");
   });
 
 
@@ -226,7 +226,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get(".modal-body > :nth-child(2) > a > u").should('be.visible').invoke('text').should('eq', "Register / Login")
     cy.get('.modal-body > :nth-child(2) > a > u').click();
     cy.url().should('eq', "https://www.automationexercise.com/login");
-    cy.captureSnapshot("Automation Exercise/Verified redirected to blank Signup_Login page");
+    cy.captureSnapshot("Automation Exercise UI/Verified redirected to blank Signup_Login page");
   });
 
 
@@ -248,12 +248,12 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get('[data-qa="signup-name"]').should("have.value", "");
     cy.get('[data-qa="signup-email"]').should("have.value", "");
     cy.get('[data-qa="signup-button"]').should('be.visible').and("be.enabled");
-    cy.captureSnapshot("Automation Exercise/Verified Sign Up Page is displayed");
+    cy.captureSnapshot("Automation Exercise UI/Verified Sign Up Page is displayed");
     cy.get('[data-qa="signup-name"]').type(testData.signUpName);
     cy.get('[data-qa="signup-email"]').type(testData.signUpEmailAddress);
-    cy.captureSnapshot("Automation Exercise/Verified Filled up Sign Up Page");
+    cy.captureSnapshot("Automation Exercise UI/Verified Filled up Sign Up Page");
     cy.get('[data-qa="signup-button"]').click();
-    cy.captureSnapshot("Automation Exercise/Verified redirected to blank Registration Page");
+    cy.captureSnapshot("Automation Exercise UI/Verified redirected to blank Registration Page");
   });
 
 
@@ -353,7 +353,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get('[data-qa="mobile_number"]').type(testData.mobileNumber);
     //Create Account button
     cy.get('[data-qa="create-account"]').should('have.text', "Create Account").and('be.enabled');
-    cy.captureSnapshot("Automation Exercise/Verified Filled Registration Page");
+    cy.captureSnapshot("Automation Exercise UI/Verified Filled Registration Page");
     cy.get('[data-qa="create-account"]').click();
     });
   });
@@ -365,13 +365,13 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get('.col-sm-9 > :nth-child(2)').should('be.visible').and('have.text', "Congratulations! Your new account has been successfully created!");
     cy.get('.col-sm-9 > :nth-child(3)').should('be.visible').and('have.text', "You can now take advantage of member privileges to enhance your online shopping experience with us.")
     cy.get('[data-qa="continue-button"]').should('be.visible').and('not.have.class', 'disabled').click();
-    cy.captureSnapshot("Automation Exercise/Verified Successful registration of user account");
+    cy.captureSnapshot("Automation Exercise UI/Verified Successful registration of user account");
   });
 
 
    Cypress.Commands.add("LoginAsName", (testData) => {
     cy.get(":nth-child(10) > a").should('be.visible').and("contain", `Logged in as ${testData.signUpName}`);
-    cy.captureSnapshot("Automation Exercise/Verified Login as Name is correct");
+    cy.captureSnapshot("Automation Exercise UI/Verified Login as Name is correct");
   });
 
 
@@ -380,7 +380,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.url().should('eq', "https://www.automationexercise.com/view_cart");
     cy.contains("Proceed To Checkout").should('be.visible').invoke('text').should('eq', "Proceed To Checkout");
     cy.get(".col-sm-6 > .btn").should('be.visible').click();
-    cy.captureSnapshot("Automation Exercise/Verified Checkout screen");
+    cy.captureSnapshot("Automation Exercise UI/Verified Checkout screen");
   });
 
 
@@ -483,7 +483,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get(":nth-child(2) > .control-label").should('be.visible').invoke("text").should('eq', "Expiration");
     cy.get('[data-qa="expiry-month"]').should('be.visible').and("have.value", '').and('have.attr', "placeholder", "MM").type(testData.shortMonth);
     cy.get('[data-qa="expiry-year"]').should('be.visible').and("have.value", '').and('have.attr', "placeholder", "YYYY").type(testData.creditYr);
-    cy.captureSnapshot("Automation Exercise/Verified Payment screen");
+    cy.captureSnapshot("Automation Exercise UI/Verified Payment screen");
     cy.contains("Pay and Confirm Order").should('be.visible').and("be.enabled").invoke("text").should('eq', "Pay and Confirm Order");
     cy.contains("Pay and Confirm Order").click();
     cy.get("body").then(($body) => {
@@ -495,7 +495,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
       } else {
         cy.log("Success message was not found in the DOM.");
       }
-    cy.captureSnapshot("Automation Exercise/Verified successful payment");
+    cy.captureSnapshot("Automation Exercise UI/Verified successful payment");
   });
 });
 
@@ -506,7 +506,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.url().should('include', "https://www.automationexercise.com/payment_done/");
     cy.get('[data-qa="order-placed"] > b').should('be.visible').invoke("text").should('eq', "Order Placed!");
     cy.get(".col-sm-9 > p").should('be.visible').invoke("text").should('eq', "Congratulations! Your order has been confirmed!");
-    cy.captureSnapshot("Automation Exercise/Verified successful checkout");
+    cy.captureSnapshot("Automation Exercise UI/Verified successful checkout");
     });
 
 
@@ -521,7 +521,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get(".col-sm-9 > .btn-default").click();
     cy.readFile("cypress/downloads/invoice.txt").should('exist').its('length').should('be.gt', 0);
     cy.readFile("cypress/downloads/invoice.txt").should('eq', `Hi ${testData.firstName} ${testData.lastName}, Your total purchase amount is ${expectedTotal}. Thank you`);
-    cy.captureSnapshot("Automation Exercise/Verified successful download of invoice");
+    cy.captureSnapshot("Automation Exercise UI/Verified successful download of invoice");
   });
 
 
@@ -532,7 +532,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
     cy.get('b').should('be.visible').and('have.text', "Account Deleted!");
     cy.get('.col-sm-9 > :nth-child(2)').should('be.visible').and('have.text', "Your account has been permanently deleted!");
     cy.get('.col-sm-9 > :nth-child(3)').should('be.visible').and('have.text', "You can create new account to take advantage of member privileges to enhance your online shopping experience with us.");
-    cy.s("Automation Exercise/Verified Successful deletion of User Account");
+    cy.captureSnapshot("Automation Exercise UI/Verified Successful deletion of User Account");
     cy.get('[data-qa="continue-button"]').should('be.visible').click();
   });
 
