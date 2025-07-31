@@ -32,7 +32,7 @@ module.exports = defineConfig({
     video: true,
     videosFolder: 'cypress/videos',
     defaultCommandTimeout: 10000,
-    retries: 0, 
+    retries: 3, 
 
     videoCompression: false,      // 🗜 Compress the video (0–51, false = no compression)
     trashAssetsBeforeRuns: false, // 🗑 Delete old videos/screenshots before a new run
@@ -40,6 +40,7 @@ module.exports = defineConfig({
 
     reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
+
       charts: true,
       reportPageTitle: "Test Execution Report",
       embeddedScreenshots: true,
@@ -47,7 +48,7 @@ module.exports = defineConfig({
       saveAllAttempts: false,
       reportDir: 'cypress/reports',
       reportFilename: `Cypress Execution Test Report-${timestamp}`, // ← your desired filename
-      overwrite: true,
+      overwrite: false,
       html: true,
       json: true,
       charts: true,
