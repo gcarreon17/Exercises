@@ -16,7 +16,7 @@ describe('GET - Pet Store Inventory', () => {
       statusKeys.forEach((key) => {
         expect(response.body[key]).to.be.a('number');
       });
-      cy.captureScreenshot("API/log all available statuses")
+      cy.captureSnapshot("API/log all available statuses");
     });
   });
 
@@ -31,7 +31,7 @@ describe('GET - Pet Store Inventory', () => {
     }).then((response) => {
       expect(response.status).to.eq(404);
     });
-    cy.captureScreenshot("API/Verified GET - returns status code 404 for incorrect URL")
+    cy.captureSnapshot("API/Verified GET - returns status code 404 for incorrect URL")
   });
 
 
@@ -46,7 +46,7 @@ describe('GET - Pet Store Inventory', () => {
     }).then((response) => {
       expect(response.status).to.eq(405);
     });
-    cy.captureScreenshot("API/Verified GET - returns status code 405 for incorrect method")
+    cy.captureSnapshot("API/Verified GET - returns status code 405 for incorrect method");
   });
 
 
@@ -64,7 +64,7 @@ describe('GET - Pet Store Inventory', () => {
       expect(response.status).to.eq(500);
       expect(response.body.message).to.eq('Internal Server Error');
     });
-    cy.captureScreenshot("API/Verified Get - status code 500 ")
+    cy.captureSnapshot("API/Verified Get - status code 500 ");
   });
 });
 
@@ -94,7 +94,7 @@ describe('POST - Place Pet Order', () => {
       expect(response.status).to.eq(200);
       expect(response.body).to.include(orderPayload);
     });
-    cy.captureScreenshot("API/Verified POST - returns status code 200 for valid order")
+    cy.captureSnapshot("API/Verified POST - returns status code 200 for valid order");
   });
 
   it('POST - Verify returns status code 404 for incorrect URL', () => {
@@ -119,10 +119,11 @@ describe('POST - Place Pet Order', () => {
     }).then((response) => {
       expect(response.status).to.eq(404);
     });
-    cy.captureScreenshot("API/Verified POST - returns status code 404 for incorrect URL")
+    cy.captureSnapshot("API/Verified POST - returns status code 404 for incorrect URL");
   });
 
-  it('POST - Verify returns status code 405 for invalid method (GET)', () => {
+
+  it("POST - Verify returns status code 405 for invalid method (GET)", () => {
     const dynamicShipDate = new Date().toISOString();
     const orderPayload = {
       id: Id,
@@ -144,9 +145,11 @@ describe('POST - Place Pet Order', () => {
     }).then((response) => {
       expect(response.status).to.eq(405);
     });
+    cy.captureSnapshot("API/Verified POST - Verified returns status code 405 for invalid method (GET)");
   });
 
-  it('POST - Verify return status code 500 for invalid payload (force internal error)', () => {
+
+  it("POST - Verify return status code 500 for invalid payload (force internal error)", () => {
     const dynamicShipDate = new Date().toISOString();
     const orderPayload = {
       id: Id,
@@ -168,6 +171,7 @@ describe('POST - Place Pet Order', () => {
     }).then((response) => {
       expect([400, 500]).to.include(response.status);
     });
+    cy.captureSnapshot("API/Verified return status code 500 for invalid payload (force internal error)");
   });
 });
 
@@ -196,6 +200,7 @@ describe("PUT - Attempt to update order (expect 405 Method Not Allowed)", () => 
     }).then((response) => {
       expect(response.status).to.eq(405); // PUT not allowed for /store/order
    });
+    cy.captureSnapshot("API/Verified return status code 500 for invalid payload (force internal error)");
   });
 });
 
@@ -203,7 +208,7 @@ describe("PUT - Attempt to update order (expect 405 Method Not Allowed)", () => 
 
 
 describe('DELETE - Order Record', () => {
-  it('DELETE - Verify returns status code 200 for successful delete order record', () => {
+  it("DELETE - Verify returns status code 200 for successful delete order record", () => {
     const orderId = 1;
 
     cy.api({
@@ -216,9 +221,11 @@ describe('DELETE - Order Record', () => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property('message', String(orderId));
     });
+    cy.captureSnapshot("API/Verified Verify returns status code 200 for successful delete order record)");
   });
 
-  it('DELETE - Verify status code 404 after deleting a non-existent order', () => {
+
+  it("DELETE - Verify status code 404 after deleting a non-existent order", () => {
     const fakeOrderId = 99999;
 
     cy.api({
@@ -231,6 +238,7 @@ describe('DELETE - Order Record', () => {
     }).then((response) => {
       expect(response.status).to.eq(404);
     });
+    cy.captureSnapshot("API/Verified Verify returns status code 200 for successful delete order record)");
   });
 
 
@@ -247,6 +255,7 @@ describe('DELETE - Order Record', () => {
     }).then((response) => {
       expect(response.status).to.eq(405);
     });
+    cy.captureSnapshot("API/Verified DELETE - returns status code 200 for successful delete order record");
   });
 });
 
@@ -272,7 +281,7 @@ describe("Petstore Order API - Successful Full CRUD Flow", () => {
     orderId = orderPayload.id;
   });
 
-  it("POST - Place a new order", () => {
+  it("POST - Verify successful place a new order", () => {
     cy.api({
       method: "POST",
       url: "https://petstore.swagger.io/v2/store/order",
@@ -284,9 +293,11 @@ describe("Petstore Order API - Successful Full CRUD Flow", () => {
       expect(response.status).to.eq(200);
       expect(response.body).to.include(orderPayload);
     });
+    cy.captureSnapshot("API/Post - Verified successful place a new order");
   });
 
-  it("GET - Retrieve the placed order", () => {
+
+  it("GET - Verified sucessful Retrieval of placed order", () => {
     cy.api({
       method: "GET",
       url: `https://petstore.swagger.io/v2/store/order/${orderId}`,
@@ -297,6 +308,7 @@ describe("Petstore Order API - Successful Full CRUD Flow", () => {
       expect(response.status).to.eq(200);
       expect(response.body.id).to.eq(orderId);
     });
+    cy.captureSnapshot("API/Verified GET sucessful Retrieval of placed order");
   });
 
   it("PUT - Attempt to update order (expect 405 Method Not Allowed)", () => {
@@ -311,9 +323,10 @@ describe("Petstore Order API - Successful Full CRUD Flow", () => {
     }).then((response) => {
       expect(response.status).to.eq(405); // PUT not allowed for /store/order
     });
+    cy.captureSnapshot("API/Verified PUT attempt to update order -expect 405 Method Not Allowed");
   });
 
-  it("DELETE - Delete the placed order", () => {
+  it("DELETE - Successful deletion of placed order", () => {
     cy.api({
       method: "DELETE",
       url: `https://petstore.swagger.io/v2/store/order/${orderId}`,
@@ -323,6 +336,7 @@ describe("Petstore Order API - Successful Full CRUD Flow", () => {
     }).then((response) => {
       expect(response.status).to.eq(200);
     });
+    cy.captureSnapshot("API/Verified successful deletion of placed order")
   });
 });
 
