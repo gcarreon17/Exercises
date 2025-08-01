@@ -1,0 +1,113 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-01T00:04:26.896Z",
+    "end": "2025-08-01T00:04:52.851Z",
+    "duration": 25955,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3075dc1e-443d-4c22-89d1-6bb8887f121e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\UI-AutomationExercise\\reviewAProduct.cy.js",
+      "file": "cypress\\e2e\\UI-AutomationExercise\\reviewAProduct.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f8713d14-d253-4d45-9063-7b90902100b7",
+          "title": "Review a Product",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Review a Product",
+              "fullTitle": "Review a Product Verify Review a Product",
+              "timedOut": null,
+              "duration": 21293,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\reviewAProduct.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\reviewAProduct.cy.js\\\\Automation Exercise UI\\\\Verified review a product_2025-08-01_08-04-49.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"https://www.automationexercise.com\");\ncy.wait(5000);\n//Verify if Website URL is correct\ncy.url().should(\"eq\", \"https://www.automationexercise.com/\");\n//Verify if Homepage is displayed\ncy.title().should(\"eq\", \"Automation Exercise\");\n//Verify List of Products are visible\ncy.get(\".shop-menu > .nav > :nth-child(2) > a\").click();\ncy.contains(\"Products\").should(\"be.visible\");\ncy.url().should(\"eq\", \"https://www.automationexercise.com/products\");\ncy.get(\".title\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"All Products\");\ncy.get(\":nth-child(3) > .product-image-wrapper > .choose > .nav > li > a\").click();\n//Verify review product section\ncy.get(\".active > a\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Write Your Review\");\ncy.get(\"#name\").should(\"be.visible\").and(\"exist\").and(\"be.enabled\").and(\"have.value\", \"\").and('have.attr', \"placeholder\", \"Your Name\").type(\"Test\");\ncy.get(\"#email\").should(\"be.visible\").and(\"exist\").and(\"be.enabled\").and(\"have.value\", \"\").and('have.attr', \"placeholder\", \"Email Address\").type(\"test@test.com\");\ncy.get(\"#review\").should(\"be.visible\").and(\"exist\").and(\"be.enabled\").and(\"have.value\", \"\").and('have.attr', \"placeholder\", \"Add Review Here!\").type(\"testing\");\ncy.get(\"#button-review\").should(\"be.visible\").and(\"be.enabled\").click();\ncy.get('span').invoke('text').should('include', 'Thank you for your review.');\ncy.captureSnapshot(\"Automation Exercise UI/Verified review a product\");",
+              "err": {},
+              "uuid": "20b625e5-72fb-4622-bbd8-c255186cd628",
+              "parentUUID": "f8713d14-d253-4d45-9063-7b90902100b7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "20b625e5-72fb-4622-bbd8-c255186cd628"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21293,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Cypress Execution Test Report-2025-07-31T23-48-42-482Z",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Test Execution Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "Cypress Execution Test Report-2025-07-31T23-48-42-482Z",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss",
+        "autoOpen": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

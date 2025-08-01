@@ -1,0 +1,208 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-01T00:02:09.569Z",
+    "end": "2025-08-01T00:03:22.282Z",
+    "duration": 72713,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f392eaf0-2427-43db-a00d-054bad67ea94",
+      "title": "",
+      "fullFile": "cypress\\e2e\\UI-AutomationExercise\\registerLoginDeleteUser.cy.js",
+      "file": "cypress\\e2e\\UI-AutomationExercise\\registerLoginDeleteUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+          "title": "Register_Login_DeleteUser",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Home Page",
+              "fullTitle": "Register_Login_DeleteUser Verify Home Page",
+              "timedOut": null,
+              "duration": 11415,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\registerLoginDeleteUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Homepage is displayed-08-01-25_2025-08-01_08-02-29.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.LaunchWebsite();",
+              "err": {},
+              "uuid": "34f56c35-065d-4565-b7dd-584d43499ad6",
+              "parentUUID": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Successful Fill-up Signup form",
+              "fullTitle": "Register_Login_DeleteUser Verify Successful Fill-up Signup form",
+              "timedOut": null,
+              "duration": 16670,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\registerLoginDeleteUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Sign Up Page is displayed_2025-08-01_08-02-37.png\",\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Filled up Sign Up Page_2025-08-01_08-02-41.png\",\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified redirected to blank Registration Page_2025-08-01_08-02-46.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.SignUpLogin(testData);\n//   const Userinput = automationExerciseData()\n//   cy.get('[data-qa=\"signup-name\"]').type(Userinput.Name).should(\"have.value\", Userinput.Name);\n//   cy.get('[data-qa=\"signup-email\"]').type(Userinput.EmailAddress).should(\"have.value\", Userinput.EmailAddress);\n//   cy.get('[data-qa=\"signup-button\"]').click();\n//  //Gender\n//    cy.get(\"#id_gender1\").should(\"be.visible\");\n//    cy.get(\"#id_gender2\").should(\"be.visible\");\n//    cy.get(\"#id_gender1\").should(\"not.be.checked\");\n//    cy.get(\"#id_gender2\").should(\"not.be.checked\");\n//    cy.get(\"#id_gender1\").check().should(\"be.checked\");\n//    cy.get(\"#id_gender2\").should(\"not.be.checked\");\n//    cy.get(\"#id_gender2\").check().should(\"be.checked\");\n//    cy.get(\"#id_gender1\").should(\"not.be.checked\");\n//  //check if matched with name and email entered in Signup screen\n//    cy.get('[data-qa=\"name\"]').should(\"have.value\", Userinput.Name);\n//    cy.get('[data-qa=\"email\"]').should(\"have.value\", Userinput.EmailAddress);\n//    cy.get('[data-qa=\"password\"]').should(\"be.empty\").type(Userinput.Password).should(\"have.value\", Userinput.Password);\n//  //Select newsletter subscription\n//    cy.get(\"#newsletter\").should(\"be.visible\").check();\n//  //Receive special offers from our partners\n//    cy.get(\"#optin\").should(\"be.visible\").check();\n//  //Date of Birth - Day\n//    cy.get('[data-qa=\"days\"]').should('be.visible').invoke('text').should('contain', 'Day');\n//    cy.get('[data-qa=\"days\"]').select(Userinput.day).find('option:selected').should('have.text', Userinput.day); \n//  //Date of Birth - Month   \n//    cy.get('[data-qa=\"months\"]').should(\"be.visible\").invoke('text').should('contain', 'Month');\n//    cy.get('[data-qa=\"months\"]').select(Userinput.month).find('option:selected').should('have.text', Userinput.month); \n//  //Date of Birth - Year    \n//    cy.get('[data-qa=\"years\"]').should(\"be.visible\").invoke('text').should('contain', 'Year')\n//    cy.get('[data-qa=\"years\"]').select(Userinput.year).find('option:selected').should('have.text', Userinput.year); \n//  //First Name\n//    cy.get('[data-qa=\"first_name\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"first_name\"]').type(Userinput.FirstName).should(\"have.value\", Userinput.FirstName);\n//  //Last Name\n//    cy.get('[data-qa=\"last_name\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"last_name\"]').type(Userinput.LastName ).should(\"have.value\", Userinput.LastName);\n//  //Company\n//    cy.get('[data-qa=\"company\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"company\"]').type(Userinput.Company).should(\"have.value\", Userinput.Company);\n//  //Address1\n//    cy.get('[data-qa=\"address\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"address\"]').type(Userinput.Address).should(\"have.value\", Userinput.Address);\n//  //Address2\n//    cy.get('[data-qa=\"address2\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"address2\"]').type(Userinput.Address).should(\"have.value\", Userinput.Address);\n//  //Country\n//    cy.get('[data-qa=\"country\"]').should(\"be.visible\").invoke('text').should('contain', 'India')\n//    cy.get('[data-qa=\"country\"]').select(Userinput.Country).find('option:selected').should('have.text', Userinput.Country);\n//  //State\n//    cy.get('[data-qa=\"state\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"state\"]').type(Userinput.State).should(\"have.value\", Userinput.State);\n//  //City\n//    cy.get('[data-qa=\"city\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"city\"]').type(Userinput.City).should(\"have.value\", Userinput.City);\n//  //Zip Code\n//    cy.get('[data-qa=\"zipcode\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"zipcode\"]').type(Userinput.ZipCode).should(\"have.value\", Userinput.ZipCode);\n//  //Mobile Number\n//    cy.get('[data-qa=\"mobile_number\"]').should(\"be.visible\").and(\"be.empty\");\n//    cy.get('[data-qa=\"mobile_number\"]').type(Userinput.MobileNumber).should(\"have.value\", Userinput.MobileNumber);\n//  //Click Create account button\n//    cy.get('[data-qa=\"create-account\"]').click();\n//    //cy.captureSnapshot('Automation Exercise/Filled up Sign up page');",
+              "err": {},
+              "uuid": "41fab20e-9dbf-40f5-b159-7175d60a69b3",
+              "parentUUID": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Successful Registration",
+              "fullTitle": "Register_Login_DeleteUser Verify Successful Registration",
+              "timedOut": null,
+              "duration": 13106,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\registerLoginDeleteUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Filled Registration Page_2025-08-01_08-02-56.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.Registration(testData);",
+              "err": {},
+              "uuid": "e06c3638-02e9-45ce-b962-ed2d067ed11d",
+              "parentUUID": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify successful registration of user account",
+              "fullTitle": "Register_Login_DeleteUser Verify successful registration of user account",
+              "timedOut": null,
+              "duration": 7511,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\registerLoginDeleteUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Successful registration of user account_2025-08-01_08-03-07.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.SuccessfulRegistration(testData);",
+              "err": {},
+              "uuid": "c532da82-3f5b-419f-a54f-0a1345855017",
+              "parentUUID": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Login as Name is correct",
+              "fullTitle": "Register_Login_DeleteUser Verify Login as Name is correct",
+              "timedOut": null,
+              "duration": 2985,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\registerLoginDeleteUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Login as Name is correct_2025-08-01_08-03-10.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.LoginAsName(testData);",
+              "err": {},
+              "uuid": "8fb2051d-f8a6-4419-a353-aeac994fe1ba",
+              "parentUUID": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify successful deletion of user account",
+              "fullTitle": "Register_Login_DeleteUser Verify successful deletion of user account",
+              "timedOut": null,
+              "duration": 9042,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\registerLoginDeleteUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\registerLoginDeleteUser.cy.js\\\\Automation Exercise UI\\\\Verified Successful deletion of User Account_2025-08-01_08-03-15.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.DeleteUser(testData);\n// cy.get('.shop-menu > .nav > :nth-child(5) > a').should('be.visible').and('contain.text', \"Delete Account\").click();\n// cy.url().should('eq', 'https://www.automationexercise.com/delete_account');\n// cy.get('b').should('be.visible').and('have.text', \"Account Deleted!\");\n// cy.get('.col-sm-9 > :nth-child(2)').should('be.visible').and('have.text', \"Your account has been permanently deleted!\");\n// cy.get('.col-sm-9 > :nth-child(3)').should('be.visible').and('have.text', \"You can create new account to take advantage of member privileges to enhance your online shopping experience with us.\");\n// cy.captureSnapshot(\"Automation Exercise/Successful deletion of User Account\");\n// cy.get('[data-qa=\"continue-button\"]').should('be.visible').click();",
+              "err": {},
+              "uuid": "469f4999-7a1e-4ca4-a696-b9f70c5d9677",
+              "parentUUID": "dcf98114-31f9-4f0e-af56-80cf65d935a3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "34f56c35-065d-4565-b7dd-584d43499ad6",
+            "41fab20e-9dbf-40f5-b159-7175d60a69b3",
+            "e06c3638-02e9-45ce-b962-ed2d067ed11d",
+            "c532da82-3f5b-419f-a54f-0a1345855017",
+            "8fb2051d-f8a6-4419-a353-aeac994fe1ba",
+            "469f4999-7a1e-4ca4-a696-b9f70c5d9677"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 60729,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Cypress Execution Test Report-2025-07-31T23-48-42-482Z",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Test Execution Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "Cypress Execution Test Report-2025-07-31T23-48-42-482Z",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss",
+        "autoOpen": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

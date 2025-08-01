@@ -511,7 +511,7 @@ Cypress.Commands.add('CheckCartDetails', (productsData) => {
 
 
 
-  Cypress.Commands.add("SuccessfulDownload", (testData) => {
+  Cypress.Commands.add("VerifydownloadedFile", (testData) => {
     const expectedQty = Cypress.env('selectedProductQty') || 1;
     const expectedPrice = Cypress.env('selectedProductPrice');
     const unitPrice = Number(expectedPrice.replace(/[^\d]/g, ''));
