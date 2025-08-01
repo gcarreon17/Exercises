@@ -2,7 +2,7 @@
 
 import { automationExerciseTestData } from '../../support/utils/automationExerciseUtils';
 
-describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
+describe("Register_Login_DeleteUser", { testIsolation: false }, () => {
 
   let testData;
 

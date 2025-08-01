@@ -5,7 +5,7 @@ import { parabankTestData } from '../../support/utils/parabankUtils.js';
 
 const testData =  parabankTestData()
 
-describe("Parabank Registration", { testIsolation: false }, () => {
+describe("Parabank Update Contact Blank Mandatory", { testIsolation: false }, () => {
   before(() => {
     cy.clearBefore();
   });

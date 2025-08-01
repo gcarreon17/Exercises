@@ -4,7 +4,7 @@ import { automationExerciseTestData } from '../../support/utils/automationExerci
 import { productNames, productPrices, productImageUrls } from '../../support/utils/automationExerciseProductsUtils';
 
 
-describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
+describe("AddToCart_Register_Payment_DownloadInvoice", { testIsolation: false }, () => {
 
   let testData;
   let productsData;
@@ -459,7 +459,7 @@ describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
 
 
   it("Verify successful download of invoice", () => {
-    cy.SuccessfulDownload(testData)
+    cy.VerifydownloadedFile(testData)
     // const expectedQty = Cypress.env('selectedProductQty') || 1;
     // const expectedPrice = Cypress.env('selectedProductPrice');
     // const unitPrice = Number(expectedPrice.replace(/[^\d]/g, ''));

@@ -4,7 +4,7 @@ import { automationExerciseTestData } from '../../support/utils/automationExerci
 import { productNames, productPrices, productImageUrls } from '../../support/utils/automationExerciseProductsUtils';
 
 
-describe("AddToCart, Register, Delete User", { testIsolation: false }, () => {
+describe("AddToCart", { testIsolation: false }, () => {
 
   let testData;
   let productsData;

@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 
 
 
-describe("Parabank Registration", { testIsolation: false }, () => {
+describe("Parabank Registration_OpenAccount", { testIsolation: false }, () => {
   let testData;
 
   before(() => {
