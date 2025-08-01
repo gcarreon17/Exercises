@@ -140,3 +140,7 @@ cypress/screenshots
 cypress/reports
 cypress/downloads/invoice.txt
 *.png
+
+# Media and HTML files
+*.mp4
+*.html

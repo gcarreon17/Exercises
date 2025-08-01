@@ -1,0 +1,113 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-01T00:01:27.001Z",
+    "end": "2025-08-01T00:01:57.639Z",
+    "duration": 30638,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5735efac-524b-4080-8b7f-83041ec7736b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\UI-AutomationExercise\\products.cy.js",
+      "file": "cypress\\e2e\\UI-AutomationExercise\\products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "69388d4a-9e51-4d84-b83d-5324225c55f1",
+          "title": "Products Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Products",
+              "fullTitle": "Products Page Products",
+              "timedOut": null,
+              "duration": 25527,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\UI-AutomationExercise\\\\products.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\products.cy.js\\\\Automation Exercise UI\\\\Verified correct number of products displayed_2025-08-01_08-01-49.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"https://www.automationexercise.com\");\ncy.wait(5000);\n//Verify if Website URL is correct\ncy.url().should(\"eq\", \"https://www.automationexercise.com/\");\n//Verify if Homepage is displayed\ncy.title().should(\"eq\", \"Automation Exercise\");\n//Verify List of Products are visible\ncy.get(\".shop-menu > .nav > :nth-child(2) > a\").click();\ncy.contains(\"Products\").should(\"be.visible\");\ncy.url().should(\"eq\", \"https://www.automationexercise.com/products\");\ncy.get(\".title\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"All Products\");\n//Verify correct number of products displayed\ncy.get('.features_items').should(\"be.visible\").find(\"img\").should(\"have.length\", 34);\ncy.captureSnapshot(\"Automation Exercise UI/Verified correct number of products displayed\");\n//Verify image1\ncy.get(\":nth-child(3) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Blue Top\");\n//Verify image2\ncy.get(\":nth-child(4) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Men Tshirt\");\n//Verify image3\ncy.get(\":nth-child(5) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Sleeveless Dress\");\n//Verify image4\ncy.get(\":nth-child(6) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Stylish Dress\");\n//Verify image5\ncy.get(\":nth-child(7) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Winter Top\");\n//Verify image6\ncy.get(\":nth-child(8) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Summer White Top\");\n//Verify image7\ncy.get(\":nth-child(9) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Madame Top For Women\");\n//Verify image8\ncy.get(\":nth-child(10) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Fancy Green Top\");\n//Verify image9\ncy.get(\":nth-child(11) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Sleeves Printed Top - White\");\n//Verify image10\ncy.get(\":nth-child(12) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Half Sleeves Top Schiffli Detailing - Pink\");\n//Verify image11\ncy.get(\":nth-child(13) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Frozen Tops For Kids\");\n//Verify image12\ncy.get(\":nth-child(14) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Full Sleeves Top Cherry - Pink\");\n//Verify image13\ncy.get(\":nth-child(15) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Printed Off Shoulder Top - White\");\n//Verify image14\ncy.get(\":nth-child(16) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Sleeves Top and Short - Blue & Pink\");\n//Verify image15\ncy.get(\":nth-child(17) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Little Girls Mr. Panda Shirt\");\n//Verify image16\ncy.get(\":nth-child(18) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Sleeveless Unicorn Patch Gown - Pink\");\n//Verify image17\ncy.get(\":nth-child(19) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Cotton Mull Embroidered Dress\");\n//Verify image18\ncy.get(\":nth-child(20) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Blue Cotton Indie Mickey Dress\");\n//Verify image19\ncy.get(\":nth-child(21) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Long Maxi Tulle Fancy Dress Up Outfits -Pink\");\n//Verify image20\ncy.get(\":nth-child(22) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Sleeveless Unicorn Print Fit & Flare Net Dress - Multi\");\n//Verify image21\ncy.get(\":nth-child(23) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Colour Blocked Shirt – Sky Blue\");\n//Verify image22\ncy.get(\":nth-child(24) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Pure Cotton V-Neck T-Shirt\");\n//Verify image23\ncy.get(\":nth-child(25) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Green Side Placket Detail T-Shirt\");\n//Verify image24\ncy.get(\":nth-child(26) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Premium Polo T-Shirts\");\n//Verify image25\ncy.get(\":nth-child(27) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Pure Cotton Neon Green Tshirt\");\n//Verify image26\ncy.get(\":nth-child(28) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Soft Stretch Jeans\");\n//Verify image27\ncy.get(\":nth-child(29) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Regular Fit Straight Jeans\");\n//Verify image28\ncy.get(\":nth-child(30) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Grunt Blue Slim Fit Jeans\");\n//Verify image29\ncy.get(\":nth-child(31) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Rose Pink Embroidered Maxi Dress\");\n//Verify image30\ncy.get(\":nth-child(32) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Cotton Silk Hand Block Print Saree\");\n//Verify image31\ncy.get(\":nth-child(33) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Rust Red Linen Saree\");\n//Verify image32\ncy.get(\":nth-child(34) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Beautiful Peacock Blue Cotton Linen Saree\");\n//Verify image33\ncy.get(\":nth-child(35) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Lace Top For Women\");\n//Verify image34\ncy.get(\":nth-child(36) > .product-image-wrapper > .single-products > .productinfo > p\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"GRAPHIC DESIGN MEN T SHIRT - BLUE\");\n//View 1st item\ncy.get(\":nth-child(3) > .product-image-wrapper > .choose > .nav > li > a\").click();\n//Verify correct product is displayed\ncy.url().should(\"eq\", \"https://www.automationexercise.com/product_details/1\");\ncy.get(\".product-information > h2\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Blue Top\");\ncy.get(\".product-information > :nth-child(6)\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Availability: In Stock\");\ncy.get(\".product-information > :nth-child(7)\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Condition: New\");\ncy.get(\".product-information > :nth-child(8)\").should(\"be.visible\").invoke(\"text\").should(\"eq\", \"Brand: Polo\");",
+              "err": {},
+              "uuid": "72fa75b7-9253-4802-8b35-e2be21a0d5bf",
+              "parentUUID": "69388d4a-9e51-4d84-b83d-5324225c55f1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "72fa75b7-9253-4802-8b35-e2be21a0d5bf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25527,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Cypress Execution Test Report-2025-07-31T23-48-42-482Z",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Test Execution Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "Cypress Execution Test Report-2025-07-31T23-48-42-482Z",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss",
+        "autoOpen": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
